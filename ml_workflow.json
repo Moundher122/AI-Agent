@@ -1,0 +1,80 @@
+{
+    "name": "My workflow",
+    "nodes": [
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          0,
+          0
+        ],
+        "id": "40f1645a-06f2-4453-8c8e-e776ea994682",
+        "name": "When chat message received",
+        "webhookId": "44174ced-ccff-4625-9fa1-91aca3f65bb9"
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.agent",
+        "typeVersion": 1.8,
+        "position": [
+          220,
+          0
+        ],
+        "id": "abef0f43-bac0-4215-ac0a-9df3713a4eba",
+        "name": "AI Agent"
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+        "typeVersion": 1,
+        "position": [
+          260,
+          220
+        ],
+        "id": "d4db9f15-df21-495e-9eda-019becfd87f0",
+        "name": "DeepSeek Chat Model"
+      }
+    ],
+    "pinData": {},
+    "connections": {
+      "When chat message received": {
+        "main": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "DeepSeek Chat Model": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "active": false,
+    "settings": {
+      "executionOrder": "v1"
+    },
+    "versionId": "67846e65-2a0f-45a0-9ef8-6296427f2013",
+    "meta": {
+      "instanceId": "bc082f06d7fccd1412bd06f4e503e364489a5dc0a118bfaf7bd0eeb3c8fc7f50"
+    },
+    "id": "ggOfnGmTdO9LeYCP",
+    "tags": []
+  }
